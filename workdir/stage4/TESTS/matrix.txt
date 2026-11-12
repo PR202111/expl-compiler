@@ -1,0 +1,28 @@
+decl
+    int a[3][3], b[3][3], sum[3][3];
+    int i, j;
+enddecl
+begin
+    i = 0;
+    while(i < 3) do
+        j = 0;
+        while(j < 3) do
+            a[i][j] = i + j;
+            b[i][j] = i * j;
+            sum[i][j] = a[i][j] + b[i][j];
+            j = j + 1;
+        endwhile;
+        i = i + 1;
+    endwhile;
+    
+    write("Matrix Sum:");
+    i = 0;
+    while(i < 3) do
+        j = 0;
+        while(j < 3) do
+            write(sum[i][j]);
+            j = j + 1;
+        endwhile;
+        i = i + 1;
+    endwhile;
+end;

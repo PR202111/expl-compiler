@@ -1,0 +1,11 @@
+begin
+  read(n);
+  read(i);
+  while (i <= n) do
+    if (i == 4) then
+      break;
+    endif;
+    write(i);
+    i = i + 1;
+  endwhile;
+end;

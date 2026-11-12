@@ -1,0 +1,23 @@
+decl
+    int n, i, isPrime;
+    str mesg;
+enddecl
+begin
+    mesg = "Enter n:";
+    write(mesg);
+    read(n);
+    isPrime = 1;
+    i = 2;
+    while (i <= (n / 2)) do
+        if ((n % i) == 0) then
+            isPrime = 0;
+            break;
+        endif;
+        i = i + 1;
+    endwhile;
+    if (isPrime == 1) then
+        write("Prime");
+    else
+        write("NotPrime");
+    endif;
+end;

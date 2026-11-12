@@ -1,0 +1,26 @@
+decl
+    int n, a, b, c, i;
+enddecl
+begin
+    write("Enter N:");
+    read(n);
+    a = 0;
+    b = 1;
+    i = 1;
+    
+    if (n == 0) then
+        write(a);
+    else 
+        if (n == 1) then
+            write(b);
+        else
+            while(i < n) do
+                c = a + b;
+                a = b;
+                b = c;
+                i = i + 1;
+            endwhile;
+            write(b);
+        endif;
+    endif;
+end;

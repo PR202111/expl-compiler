@@ -1,0 +1,6 @@
+begin
+  read(a);
+  read(b);
+  d = a + b;
+  write(d);
+end

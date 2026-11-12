@@ -1,0 +1,89 @@
+class
+    Counter {
+        decl
+            int value;
+            int init();
+            int increment();
+            int getvalue();
+        enddecl
+
+        int init() {
+            begin
+                self.value = 10;
+                return 1;
+            end
+        }
+
+        int increment() {
+            begin
+                self.value = self.value + 1;
+                return self.value;
+            end
+        }
+
+        int getvalue() {
+            begin
+                return self.value;
+            end
+        }
+    }
+
+    Calculator {
+        decl
+            int result;
+            int init();
+            int add(int a, int b);
+            int getresult();
+        enddecl
+
+        int init() {
+            begin
+                self.result = 0;
+                return 1;
+            end
+        }
+
+        int add(int a, int b) {
+            begin
+                self.result = a + b;
+                return self.result;
+            end
+        }
+
+        int getresult() {
+            begin
+                return self.result;
+            end
+        }
+    }
+endclass
+
+decl
+    Counter c;
+    Calculator calc;
+enddecl
+
+int main() {
+    decl
+        int x, y, z;
+    enddecl
+    begin
+        x = initialize();
+
+        c = new(Counter);
+        calc = new(Calculator);
+
+        x = c.init();
+        y = calc.init();
+
+        x = c.increment();
+        x = c.increment();
+        write(c.getvalue());
+
+        z = calc.add(15, 25);
+        write(z);
+        write(calc.getresult());
+
+        return 0;
+    end
+}

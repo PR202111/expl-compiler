@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+*.o
+a.out
+
+# Lex/Yacc generated files
+lex.yy.c
+y.tab.c
+y.tab.h
+
+# Compiled binaries
+compiler
+xsm
+spl/spl
+xfs-interface/xfs-interface
+xsm_dev/xsm
+xsm_dev/out
+
+# XFS virtual disk image
+xfs-interface/disk.xfs

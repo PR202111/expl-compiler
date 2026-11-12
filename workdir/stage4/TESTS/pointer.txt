@@ -1,0 +1,10 @@
+decl
+    int a, *p;
+    int arr[10][10];
+enddecl
+begin
+    a = 50;
+    p = &a;
+    arr[2][5] = *p + 20;
+    write(arr[2][5]);
+end;

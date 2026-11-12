@@ -1,0 +1,65 @@
+type
+  linkedList {
+    int data; 
+    linkedList next;  
+  }
+  
+  markList {
+    str name;  
+    linkedList marks; 
+  }
+endtype
+
+decl
+  markList student;
+enddecl
+
+int main()
+{
+  decl
+    int val;
+  enddecl
+
+  begin
+    val = initialize();
+    
+    // 1. Allocate the main student record
+    student = alloc();
+    student.name = "Prashant";
+    
+    // 2. Allocate the first node of marks
+    student.marks = alloc();
+    student.marks.data = 95;
+    
+    // 3. DEEP CHAINING: Allocate the second node of marks
+    student.marks.next = alloc();
+    student.marks.next.data = 88;
+    
+    // 4. DEEPER CHAINING: Allocate the third node of marks
+    student.marks.next.next = alloc();
+    student.marks.next.next.data = 92;
+    student.marks.next.next.next = null;
+
+    // --- TEST OUTPUT ---
+    write("Student:");
+    write(student.name);
+    
+    write("Mark 1:");
+    write(student.marks.data);
+    
+    write("Mark 2:");
+    write(student.marks.next.data);
+    
+    write("Mark 3:");
+    write(student.marks.next.next.data);
+
+    // Deep comparison test
+    if (student.marks.data > student.marks.next.data) then
+        write("Improved!");
+    else
+        write("Dropped!");
+    endif;
+
+    return 0;
+  end
+}
